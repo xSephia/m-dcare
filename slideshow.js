@@ -11,34 +11,45 @@ document.addEventListener("DOMContentLoaded", function () {
     const header = document.querySelector("header");
     header.insertAdjacentElement("afterend", mainContainer);
     
+    function createSlideshow(container, imageSet) {
+        container.classList.add("slideshow");
+        container.style.width = "100%";
+        container.style.height = "50vh";
+        container.style.overflow = "hidden";
+        mainContainer.appendChild(container);
+        
+        const slides = [];
+        imageSet.forEach((src, index) => {
+            const slide = document.createElement("div");
+            slide.classList.add("slide");
+            slide.style.backgroundImage = `url(${src})`;
+            slide.style.width = "100%";
+            slide.style.height = "50vh";
+            slide.style.backgroundSize = "cover";
+            slide.style.backgroundPosition = "center";
+            slide.style.position = "absolute";
+            slide.style.top = "0";
+            slide.style.left = "0";
+            slide.style.right = "0";
+            slide.style.bottom = "0";
+            slide.style.opacity = "0";
+            slide.style.transition = "opacity 1s ease-in-out";
+            if (index === 0) slide.style.opacity = "1";
+            container.appendChild(slide);
+            slides.push(slide);
+        });
+        
+        let currentIndex = 0;
+        setInterval(() => {
+            slides.forEach(slide => slide.style.opacity = "0");
+            currentIndex = (currentIndex + 1) % slides.length;
+            slides[currentIndex].style.opacity = "1";
+        }, 25000);
+    }
+    
     // First Slideshow Section
     const firstSlideshowContainer = document.createElement("div");
-    firstSlideshowContainer.classList.add("slideshow");
-    firstSlideshowContainer.style.width = "100%";
-    firstSlideshowContainer.style.height = "50vh";
-    firstSlideshowContainer.style.overflow = "hidden";
-    mainContainer.appendChild(firstSlideshowContainer);
-    
-    const firstSlides = [];
-    images.slice(0, 6).forEach((src, index) => {
-        const slide = document.createElement("div");
-        slide.classList.add("slide");
-        slide.style.backgroundImage = `url(${src})`;
-        slide.style.width = "100%";
-        slide.style.height = "50vh";
-        slide.style.backgroundSize = "cover";
-        slide.style.backgroundPosition = "center";
-        if (index === 0) slide.classList.add("active");
-        firstSlideshowContainer.appendChild(slide);
-        firstSlides.push(slide);
-    });
-    
-    let firstCurrentIndex = 0;
-    setInterval(() => {
-        firstSlides.forEach((slide) => slide.classList.remove("active"));
-        firstCurrentIndex = (firstCurrentIndex + 1) % firstSlides.length;
-        firstSlides[firstCurrentIndex].classList.add("active");
-    }, 25000);
+    createSlideshow(firstSlideshowContainer, images.slice(0, 6));
     
     // About M&D Care Section - Ensure It's Over the First Image
     const aboutSection = document.createElement("div");
@@ -57,32 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     // Second Slideshow Section
     const secondSlideshowContainer = document.createElement("div");
-    secondSlideshowContainer.classList.add("slideshow");
-    secondSlideshowContainer.style.width = "100%";
-    secondSlideshowContainer.style.height = "50vh";
-    secondSlideshowContainer.style.overflow = "hidden";
-    mainContainer.appendChild(secondSlideshowContainer);
-    
-    const secondSlides = [];
-    images.slice(6, 12).forEach((src, index) => {
-        const slide = document.createElement("div");
-        slide.classList.add("slide");
-        slide.style.backgroundImage = `url(${src})`;
-        slide.style.width = "100%";
-        slide.style.height = "50vh";
-        slide.style.backgroundSize = "cover";
-        slide.style.backgroundPosition = "center";
-        if (index === 0) slide.classList.add("active");
-        secondSlideshowContainer.appendChild(slide);
-        secondSlides.push(slide);
-    });
-    
-    let secondCurrentIndex = 0;
-    setInterval(() => {
-        secondSlides.forEach((slide) => slide.classList.remove("active"));
-        secondCurrentIndex = (secondCurrentIndex + 1) % secondSlides.length;
-        secondSlides[secondCurrentIndex].classList.add("active");
-    }, 25000);
+    createSlideshow(secondSlideshowContainer, images.slice(6, 12));
     
     // Core Services Text Over Second Slideshow
     const coreServicesOverlay = document.createElement("div");
@@ -96,6 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
     `;
     secondSlideshowContainer.appendChild(coreServicesOverlay);
 });
+
 
 
     `;

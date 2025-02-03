@@ -38,12 +38,24 @@ document.addEventListener("DOMContentLoaded", function () {
         currentIndex = (currentIndex + 1) % slides.length;
     }, 25000);
     
-    // About M&D Care Section - Placed Over First Image
+    // About M&D Care Section - Ensure It's Over the First Image
     const aboutSection = document.createElement("div");
     aboutSection.classList.add("overlay-text");
     aboutSection.innerHTML = `<h2>About M&D Care</h2>
         <p>At M&D Care, we are dedicated to empowering individuals with developmental disabilities by offering personalized services that promote independence, dignity, and well-being.</p>`;
     slideshowContainer.appendChild(aboutSection);
+    
+    // Adjust the overlay placement to make it centered on the first image
+    aboutSection.style.position = "absolute";
+    aboutSection.style.top = "50%";
+    aboutSection.style.left = "50%";
+    aboutSection.style.transform = "translate(-50%, -50%)";
+    aboutSection.style.color = "white";
+    aboutSection.style.textAlign = "center";
+    aboutSection.style.backgroundColor = "rgba(0, 0, 0, 0.6)";
+    aboutSection.style.padding = "30px";
+    aboutSection.style.borderRadius = "10px";
+    aboutSection.style.maxWidth = "80%";
     
     // Our Services Section - Below First Image
     const servicesSection = document.createElement("div");

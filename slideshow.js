@@ -82,9 +82,3 @@ document.addEventListener("DOMContentLoaded", function () {
     `;
     secondSlideshowContainer.appendChild(coreServicesOverlay);
 });
-
-
-
-    `;
-    secondSlideshowContainer.appendChild(coreServicesOverlay);
-});

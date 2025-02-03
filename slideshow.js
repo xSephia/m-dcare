@@ -21,6 +21,10 @@ document.addEventListener("DOMContentLoaded", function () {
         const slide = document.createElement("div");
         slide.classList.add("slide");
         slide.style.backgroundImage = `url(${src})`;
+        slide.style.width = "100%";
+        slide.style.height = "100vh";
+        slide.style.backgroundSize = "cover";
+        slide.style.backgroundPosition = "center";
         if (index === 0) slide.classList.add("active");
         firstSlideshowContainer.appendChild(slide);
         firstSlides.push(slide);
@@ -58,6 +62,10 @@ document.addEventListener("DOMContentLoaded", function () {
         const slide = document.createElement("div");
         slide.classList.add("slide");
         slide.style.backgroundImage = `url(${src})`;
+        slide.style.width = "100%";
+        slide.style.height = "100vh";
+        slide.style.backgroundSize = "cover";
+        slide.style.backgroundPosition = "center";
         if (index === 0) slide.classList.add("active");
         secondSlideshowContainer.appendChild(slide);
         secondSlides.push(slide);

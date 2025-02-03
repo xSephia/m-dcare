@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const slide = document.createElement("div");
         slide.classList.add("slide");
         slide.style.backgroundImage = `url(${src})`;
-        if (index < 3) slide.classList.add("active");
+        if (index < 2) slide.classList.add("active");
         slideshowContainer.appendChild(slide);
         slides.push(slide);
     });
@@ -23,11 +23,22 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(() => {
         slides.forEach((slide) => slide.classList.remove("active"));
         
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < 2; i++) {
             let nextIndex = (currentIndex + i) % slides.length;
             slides[nextIndex].classList.add("active");
         }
         
         currentIndex = (currentIndex + 1) % slides.length;
     }, 25000);
+    
+    // Creating separators with text
+    const aboutSection = document.createElement("div");
+    aboutSection.classList.add("separator");
+    aboutSection.innerHTML = `<h2>About M&D Care</h2><p>At M&D Care, we are dedicated to empowering individuals with developmental disabilities by offering personalized services that promote independence, dignity, and well-being.</p>`;
+    slideshowContainer.insertAdjacentElement("afterend", aboutSection);
+    
+    const servicesSection = document.createElement("div");
+    servicesSection.classList.add("separator");
+    servicesSection.innerHTML = `<h2>Our Services</h2>`;
+    aboutSection.insertAdjacentElement("afterend", servicesSection);
 });

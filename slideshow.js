@@ -1,49 +1,72 @@
 document.addEventListener("DOMContentLoaded", function () {
     const images = [
-        "images/bg1.jpg", "images/bg2.jpg", "images/bg3.jpg", "images/bg4.jpg",
-        "images/bg5.jpg", "images/bg6.jpg", "images/bg7.jpg", "images/bg8.jpg",
+        "images/bg1.jpg", "images/bg2.jpg", "images/bg3.jpg", "images/bg4.jpg", 
+        "images/bg5.jpg", "images/bg6.jpg", "images/bg7.jpg", "images/bg8.jpg", 
         "images/bg9.jpg", "images/bg10.jpg", "images/bg11.jpg", "images/bg12.jpg"
     ];
-
+    
     const mainContainer = document.createElement("div");
     mainContainer.classList.add("main-content");
-
+    
     const header = document.querySelector("header");
     header.insertAdjacentElement("afterend", mainContainer);
-
-    // Slideshow Container
-    const slideshowContainer = document.createElement("div");
-    slideshowContainer.classList.add("slideshow");
-    mainContainer.appendChild(slideshowContainer);
-
-    const slides = [];
-    images.forEach((src, index) => {
+    
+    // First Slideshow Section
+    const firstSlideshowContainer = document.createElement("div");
+    firstSlideshowContainer.classList.add("slideshow");
+    mainContainer.appendChild(firstSlideshowContainer);
+    
+    const firstSlides = [];
+    images.slice(0, 6).forEach((src, index) => {
         const slide = document.createElement("div");
         slide.classList.add("slide");
         slide.style.backgroundImage = `url(${src})`;
-        if (index < 2) slide.classList.add("active");
-        slideshowContainer.appendChild(slide);
-        slides.push(slide);
+        if (index === 0) slide.classList.add("active");
+        firstSlideshowContainer.appendChild(slide);
+        firstSlides.push(slide);
     });
-
-    let currentIndex = 0;
+    
+    let firstCurrentIndex = 0;
     setInterval(() => {
-        slides.forEach((slide) => slide.classList.remove("active"));
-
-        for (let i = 0; i < 2; i++) {
-            let nextIndex = (currentIndex + i) % slides.length;
-            slides[nextIndex].classList.add("active");
-        }
-
-        currentIndex = (currentIndex + 2) % slides.length;
+        firstSlides.forEach((slide) => slide.classList.remove("active"));
+        firstCurrentIndex = (firstCurrentIndex + 1) % firstSlides.length;
+        firstSlides[firstCurrentIndex].classList.add("active");
     }, 25000);
-
-    // Overlay Text for About M&D Care
-    const aboutOverlay = document.createElement("div");
-    aboutOverlay.classList.add("overlay-text");
-    aboutOverlay.innerHTML = `
-        <h2>About M&D Care</h2>
-        <p>At M&D Care, we are dedicated to empowering individuals with developmental disabilities by offering personalized services that promote independence, dignity, and well-being.</p>
-    `;
-    slideshowContainer.appendChild(aboutOverlay);
+    
+    // About M&D Care Section - Ensure It's Over the First Image
+    const aboutSection = document.createElement("div");
+    aboutSection.classList.add("overlay-text");
+    aboutSection.innerHTML = `<h2>About M&D Care</h2>
+        <p>At M&D Care, we are dedicated to empowering individuals with developmental disabilities by offering personalized services that promote independence, dignity, and well-being.</p>`;
+    firstSlideshowContainer.appendChild(aboutSection);
+    
+    // Separator Before Second Image
+    const servicesSection = document.createElement("div");
+    servicesSection.classList.add("separator");
+    servicesSection.innerHTML = `<h2>Our Services</h2>
+        <p><strong>Supporting Individuals with Developmental Disabilities</strong></p>
+        <p>Providing compassionate care and tailored support services to enhance the quality of life for individuals with developmental disabilities.</p>`;
+    mainContainer.appendChild(servicesSection);
+    
+    // Second Slideshow Section
+    const secondSlideshowContainer = document.createElement("div");
+    secondSlideshowContainer.classList.add("slideshow");
+    mainContainer.appendChild(secondSlideshowContainer);
+    
+    const secondSlides = [];
+    images.slice(6, 12).forEach((src, index) => {
+        const slide = document.createElement("div");
+        slide.classList.add("slide");
+        slide.style.backgroundImage = `url(${src})`;
+        if (index === 0) slide.classList.add("active");
+        secondSlideshowContainer.appendChild(slide);
+        secondSlides.push(slide);
+    });
+    
+    let secondCurrentIndex = 0;
+    setInterval(() => {
+        secondSlides.forEach((slide) => slide.classList.remove("active"));
+        secondCurrentIndex = (secondCurrentIndex + 1) % secondSlides.length;
+        secondSlides[secondCurrentIndex].classList.add("active");
+    }, 25000);
 });

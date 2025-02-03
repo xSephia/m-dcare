@@ -57,16 +57,12 @@ document.addEventListener("DOMContentLoaded", function () {
     aboutSection.style.borderRadius = "10px";
     aboutSection.style.maxWidth = "80%";
     
-    // Services Section - Below First Image
+    // Our Services Section - Below First Image
     const servicesSection = document.createElement("div");
     servicesSection.classList.add("separator");
-    servicesSection.innerHTML = `<h2>We Offer:</h2>
-        <ul>
-            <li>Personalized Care Plans</li>
-            <li>Community Integration Support</li>
-            <li>Life Skills Development</li>
-            <li>Family Counseling and Resources</li>
-        </ul>`;
+    servicesSection.innerHTML = `<h2>Our Services</h2>
+        <p><strong>Supporting Individuals with Developmental Disabilities</strong></p>
+        <p>Providing compassionate care and tailored support services to enhance the quality of life for individuals with developmental disabilities.</p>`;
     mainContainer.appendChild(servicesSection);
 });
 

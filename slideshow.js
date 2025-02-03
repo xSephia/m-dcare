@@ -14,6 +14,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // First Slideshow Section
     const firstSlideshowContainer = document.createElement("div");
     firstSlideshowContainer.classList.add("slideshow");
+    firstSlideshowContainer.style.width = "100vw";
+    firstSlideshowContainer.style.height = "100vh";
+    firstSlideshowContainer.style.overflow = "hidden";
     mainContainer.appendChild(firstSlideshowContainer);
     
     const firstSlides = [];
@@ -21,10 +24,15 @@ document.addEventListener("DOMContentLoaded", function () {
         const slide = document.createElement("div");
         slide.classList.add("slide");
         slide.style.backgroundImage = `url(${src})`;
-        slide.style.width = "100%";
+        slide.style.width = "100vw";
         slide.style.height = "100vh";
         slide.style.backgroundSize = "cover";
         slide.style.backgroundPosition = "center";
+        slide.style.position = "absolute";
+        slide.style.top = "0";
+        slide.style.left = "0";
+        slide.style.right = "0";
+        slide.style.bottom = "0";
         if (index === 0) slide.classList.add("active");
         firstSlideshowContainer.appendChild(slide);
         firstSlides.push(slide);
@@ -55,6 +63,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Second Slideshow Section
     const secondSlideshowContainer = document.createElement("div");
     secondSlideshowContainer.classList.add("slideshow");
+    secondSlideshowContainer.style.width = "100vw";
+    secondSlideshowContainer.style.height = "100vh";
+    secondSlideshowContainer.style.overflow = "hidden";
     mainContainer.appendChild(secondSlideshowContainer);
     
     const secondSlides = [];
@@ -62,10 +73,15 @@ document.addEventListener("DOMContentLoaded", function () {
         const slide = document.createElement("div");
         slide.classList.add("slide");
         slide.style.backgroundImage = `url(${src})`;
-        slide.style.width = "100%";
+        slide.style.width = "100vw";
         slide.style.height = "100vh";
         slide.style.backgroundSize = "cover";
         slide.style.backgroundPosition = "center";
+        slide.style.position = "absolute";
+        slide.style.top = "0";
+        slide.style.left = "0";
+        slide.style.right = "0";
+        slide.style.bottom = "0";
         if (index === 0) slide.classList.add("active");
         secondSlideshowContainer.appendChild(slide);
         secondSlides.push(slide);

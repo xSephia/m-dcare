@@ -4,18 +4,18 @@ document.addEventListener("DOMContentLoaded", function () {
         "images/bg5.jpg", "images/bg6.jpg", "images/bg7.jpg", "images/bg8.jpg", 
         "images/bg9.jpg", "images/bg10.jpg", "images/bg11.jpg", "images/bg12.jpg"
     ];
-
+    
     const mainContainer = document.createElement("div");
     mainContainer.classList.add("main-content");
-
+    
     const header = document.querySelector("header");
     header.insertAdjacentElement("afterend", mainContainer);
-
+    
     // First Slideshow Section
     const slideshowContainer = document.createElement("div");
     slideshowContainer.classList.add("slideshow");
     mainContainer.appendChild(slideshowContainer);
-
+    
     const slides = [];
     images.forEach((src, index) => {
         const slide = document.createElement("div");
@@ -25,31 +25,31 @@ document.addEventListener("DOMContentLoaded", function () {
         slideshowContainer.appendChild(slide);
         slides.push(slide);
     });
-
+    
     let currentIndex = 0;
     setInterval(() => {
         slides.forEach((slide) => slide.classList.remove("active"));
-
+        
         for (let i = 0; i < 2; i++) {
             let nextIndex = (currentIndex + i) % slides.length;
             slides[nextIndex].classList.add("active");
         }
-
+        
         currentIndex = (currentIndex + 1) % slides.length;
     }, 25000);
-
-    // About M&D Care Section
+    
+    // About M&D Care Section - Now Over the Image
     const aboutSection = document.createElement("div");
-    aboutSection.classList.add("separator");
+    aboutSection.classList.add("overlay-text");
     aboutSection.innerHTML = `<h2>About M&D Care</h2>
         <p>At M&D Care, we are dedicated to empowering individuals with developmental disabilities by offering personalized services that promote independence, dignity, and well-being.</p>`;
-    mainContainer.appendChild(aboutSection);
-
+    slideshowContainer.appendChild(aboutSection);
+    
     // Second Background Slideshow Section
     const secondSlideshow = document.createElement("div");
     secondSlideshow.classList.add("slideshow");
     mainContainer.appendChild(secondSlideshow);
-
+    
     images.forEach((src, index) => {
         const slide = document.createElement("div");
         slide.classList.add("slide");
@@ -57,10 +57,12 @@ document.addEventListener("DOMContentLoaded", function () {
         if (index >= 2 && index < 4) slide.classList.add("active");
         secondSlideshow.appendChild(slide);
     });
-
-    // Our Services Section
+    
+    // Our Services Section - Now Where About M&D Care Was
     const servicesSection = document.createElement("div");
     servicesSection.classList.add("separator");
-    servicesSection.innerHTML = `<h2>Our Services</h2>`;
+    servicesSection.innerHTML = `<h2>Our Services</h2>
+        <p><strong>Supporting Individuals with Developmental Disabilities</strong></p>
+        <p>Providing compassionate care and tailored support services to enhance the quality of life for individuals with developmental disabilities.</p>`;
     mainContainer.appendChild(servicesSection);
 });

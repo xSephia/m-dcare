@@ -93,4 +93,16 @@ document.addEventListener("DOMContentLoaded", function () {
         secondCurrentIndex = (secondCurrentIndex + 1) % secondSlides.length;
         secondSlides[secondCurrentIndex].classList.add("active");
     }, 25000);
+    
+    // Core Services Text Over Second Slideshow
+    const coreServicesOverlay = document.createElement("div");
+    coreServicesOverlay.classList.add("overlay-text");
+    coreServicesOverlay.innerHTML = `
+        <h2>Our Core Services</h2>
+        <p><strong>Personalized Care Plans:</strong> Designed for you</p>
+        <p><strong>Community Integration Support:</strong> Thrive among your peers</p>
+        <p><strong>Life Skills Development:</strong> Develop independent life skills</p>
+        <p><strong>Family Counseling and Resources:</strong> Become stronger, together</p>
+    `;
+    secondSlideshowContainer.appendChild(coreServicesOverlay);
 });

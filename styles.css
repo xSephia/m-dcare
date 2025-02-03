@@ -13,20 +13,29 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.3); /* Soft border at bottom */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 header img {
     max-width: 120px;
-    margin-left: 20px; /* Moves the logo slightly to the right */
+    margin-left: 40px; /* Moves the logo further to the right */
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: flex-start; /* Moves navigation options more to the left */
 }
 
 nav ul {
     list-style: none;
     padding: 0;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; /* Aligns links to the left */
     flex-grow: 1;
-    gap: 40px; /* Increased gap for clearer separation */
+    gap: 30px; /* Space between links */
 }
 
 nav li {
@@ -40,13 +49,15 @@ nav a {
     font-size: 20px;
     font-weight: bold;
     padding: 10px 20px;
-    background-color: rgba(255, 255, 255, 0.2); /* Soft background for better visibility */
+    background-color: rgba(255, 255, 255, 0.2); /* Soft background */
     border-radius: 8px;
-    transition: background-color 0.3s, transform 0.2s;
+    border: 2px solid rgba(255, 255, 255, 0.3); /* Adds soft borders */
+    transition: background-color 0.3s, transform 0.2s, border-color 0.3s;
 }
 
 nav a:hover {
     background-color: rgba(255, 255, 255, 0.4);
+    border-color: rgba(255, 255, 255, 0.6); /* Enhances border on hover */
     transform: scale(1.05);
 }
 

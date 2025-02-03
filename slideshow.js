@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const header = document.querySelector("header");
     header.insertAdjacentElement("afterend", mainContainer);
     
-    // First Slideshow Section
+    // Slideshow Container
     const slideshowContainer = document.createElement("div");
     slideshowContainer.classList.add("slideshow");
     mainContainer.appendChild(slideshowContainer);
@@ -35,34 +35,15 @@ document.addEventListener("DOMContentLoaded", function () {
             slides[nextIndex].classList.add("active");
         }
         
-        currentIndex = (currentIndex + 1) % slides.length;
+        currentIndex = (currentIndex + 2) % slides.length;
     }, 25000);
     
-    // About M&D Care Section - Ensure It's Over the First Image
-    const aboutSection = document.createElement("div");
-    aboutSection.classList.add("overlay-text");
-    aboutSection.innerHTML = `<h2>About M&D Care</h2>
-        <p>At M&D Care, we are dedicated to empowering individuals with developmental disabilities by offering personalized services that promote independence, dignity, and well-being.</p>`;
-    slideshowContainer.appendChild(aboutSection);
-    
-    // Adjust the overlay placement to make it centered on the first image
-    aboutSection.style.position = "absolute";
-    aboutSection.style.top = "50%";
-    aboutSection.style.left = "50%";
-    aboutSection.style.transform = "translate(-50%, -50%)";
-    aboutSection.style.color = "white";
-    aboutSection.style.textAlign = "center";
-    aboutSection.style.backgroundColor = "rgba(0, 0, 0, 0.6)";
-    aboutSection.style.padding = "30px";
-    aboutSection.style.borderRadius = "10px";
-    aboutSection.style.maxWidth = "80%";
-    
-    // Our Services Section - Below First Image
-    const servicesSection = document.createElement("div");
-    servicesSection.classList.add("separator");
-    servicesSection.innerHTML = `<h2>Our Services</h2>
-        <p><strong>Supporting Individuals with Developmental Disabilities</strong></p>
-        <p>Providing compassionate care and tailored support services to enhance the quality of life for individuals with developmental disabilities.</p>`;
-    mainContainer.appendChild(servicesSection);
+    // Overlay Text for About M&D Care
+    const aboutOverlay = document.createElement("div");
+    aboutOverlay.classList.add("overlay-text");
+    aboutOverlay.innerHTML = `
+        <h2>About M&D Care</h2>
+        <p>At M&D Care, we are dedicated to empowering individuals with developmental disabilities by offering personalized services that promote independence, dignity, and well-being.</p>
+    `;
+    slideshowContainer.appendChild(aboutOverlay);
 });
-

@@ -5,11 +5,15 @@ document.addEventListener("DOMContentLoaded", function () {
         "images/bg9.jpg", "images/bg10.jpg", "images/bg11.jpg", "images/bg12.jpg"
     ];
     
-    const slides = [];
+    const mainContainer = document.createElement("div");
+    mainContainer.classList.add("main-content");
+    document.body.appendChild(mainContainer);
+    
     const slideshowContainer = document.createElement("div");
     slideshowContainer.classList.add("slideshow");
-    document.body.insertBefore(slideshowContainer, document.body.firstChild);
+    mainContainer.appendChild(slideshowContainer);
     
+    const slides = [];
     images.forEach((src, index) => {
         const slide = document.createElement("div");
         slide.classList.add("slide");
@@ -35,10 +39,22 @@ document.addEventListener("DOMContentLoaded", function () {
     const aboutSection = document.createElement("div");
     aboutSection.classList.add("separator");
     aboutSection.innerHTML = `<h2>About M&D Care</h2><p>At M&D Care, we are dedicated to empowering individuals with developmental disabilities by offering personalized services that promote independence, dignity, and well-being.</p>`;
-    slideshowContainer.insertAdjacentElement("afterend", aboutSection);
+    mainContainer.appendChild(aboutSection);
+    
+    const secondSlideshow = document.createElement("div");
+    secondSlideshow.classList.add("slideshow");
+    mainContainer.appendChild(secondSlideshow);
+    
+    images.forEach((src, index) => {
+        const slide = document.createElement("div");
+        slide.classList.add("slide");
+        slide.style.backgroundImage = `url(${src})`;
+        if (index >= 2 && index < 4) slide.classList.add("active");
+        secondSlideshow.appendChild(slide);
+    });
     
     const servicesSection = document.createElement("div");
     servicesSection.classList.add("separator");
     servicesSection.innerHTML = `<h2>Our Services</h2>`;
-    aboutSection.insertAdjacentElement("afterend", servicesSection);
+    mainContainer.appendChild(servicesSection);
 });

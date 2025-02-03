@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const firstSlideshowContainer = document.createElement("div");
     firstSlideshowContainer.classList.add("slideshow");
     firstSlideshowContainer.style.width = "100%";
-    firstSlideshowContainer.style.height = "100vh";
+    firstSlideshowContainer.style.height = "50vh";
     firstSlideshowContainer.style.overflow = "hidden";
     mainContainer.appendChild(firstSlideshowContainer);
     
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
         slide.classList.add("slide");
         slide.style.backgroundImage = `url(${src})`;
         slide.style.width = "100%";
-        slide.style.height = "100vh";
+        slide.style.height = "50vh";
         slide.style.backgroundSize = "cover";
         slide.style.backgroundPosition = "center";
         if (index === 0) slide.classList.add("active");
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const secondSlideshowContainer = document.createElement("div");
     secondSlideshowContainer.classList.add("slideshow");
     secondSlideshowContainer.style.width = "100%";
-    secondSlideshowContainer.style.height = "100vh";
+    secondSlideshowContainer.style.height = "50vh";
     secondSlideshowContainer.style.overflow = "hidden";
     mainContainer.appendChild(secondSlideshowContainer);
     
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
         slide.classList.add("slide");
         slide.style.backgroundImage = `url(${src})`;
         slide.style.width = "100%";
-        slide.style.height = "100vh";
+        slide.style.height = "50vh";
         slide.style.backgroundSize = "cover";
         slide.style.backgroundPosition = "center";
         if (index === 0) slide.classList.add("active");
@@ -96,6 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
     `;
     secondSlideshowContainer.appendChild(coreServicesOverlay);
 });
+
 
     `;
     secondSlideshowContainer.appendChild(coreServicesOverlay);

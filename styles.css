@@ -39,7 +39,15 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 60px; /* Increased gap between links (~1 inch) */
+    gap: 60px; /* 1-inch spacing between links */
+    height: 100%; /* Ensures nav bar height is respected */
+    align-items: stretch; /* Stretches list items to full height */
+}
+
+nav li {
+    display: flex;
+    align-items: center;
+    height: 100%; /* Makes each menu item fill the nav bar height */
 }
 
 nav a {
@@ -50,21 +58,15 @@ nav a {
     padding: 15px 20px;
     display: flex;
     align-items: center;
-    height: 100%; /* Makes the highlight span the full height */
+    justify-content: center;
+    height: 100%; /* Makes the hover effect span full height */
     transition: background-color 0.3s, color 0.3s;
-}
-
-nav li {
-    position: relative;
-    display: flex;
-    align-items: center;
-    height: 60px; /* Adjusted height to match the navigation bar */
 }
 
 nav a:hover {
     background-color: rgba(255, 255, 255, 0.2);
     color: #fff;
-    border-radius: 0; /* Keeps it a full vertical rectangle */
+    border-radius: 0; /* Ensures the highlight is a full vertical rectangle */
 }
 
 /* Responsive Styles */

@@ -19,14 +19,20 @@ header {
     width: 100%;
     top: 0;
     z-index: 1000;
-    height: 70px; /* Set a fixed height for the header */
+    height: 70px; /* Keep navbar height fixed */
+}
+
+/* Logo */
+.logo {
+    height: 50px; /* Keeps logo properly sized */
+    width: auto; /* Maintains aspect ratio */
 }
 
 /* Navigation */
 nav {
     display: flex;
     align-items: center;
-    height: 100%; /* Inherit the height from the header */
+    height: 100%; /* Matches header height */
 }
 
 /* Navigation List */
@@ -35,14 +41,16 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 60px; /* Approximately 1 inch spacing */
-    height: 100%; /* Inherit the height from the nav */
-    align-items: center; /* Center items vertically */
+    gap: 60px; /* Keeps navigation links well-spaced */
+    height: 100%;
+    align-items: center;
 }
 
 /* Navigation Items */
 nav li {
-    height: 100%; /* Ensure list items span the full height */
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 /* Navigation Links */
@@ -51,10 +59,11 @@ nav a {
     color: white;
     font-size: 18px;
     font-weight: bold;
-    padding: 0 20px; /* Horizontal padding */
+    padding: 0 20px; /* Keep horizontal padding */
     display: flex;
     align-items: center;
-    height: 100%; /* Ensure links span the full height */
+    justify-content: center;
+    height: 100%; /* Ensures hover effect spans full height */
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -62,6 +71,7 @@ nav a {
 nav a:hover {
     background-color: rgba(255, 255, 255, 0.2);
     color: #fff;
+    border-radius: 0; /* Keeps full-height hover effect */
 }
 
 /* Responsive Styles */

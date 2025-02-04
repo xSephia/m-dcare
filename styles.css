@@ -39,7 +39,7 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 20px;
+    gap: 60px; /* Increased gap between links (~1 inch) */
 }
 
 nav a {
@@ -47,13 +47,24 @@ nav a {
     color: white;
     font-size: 18px;
     font-weight: bold;
-    padding: 10px 15px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    height: 100%; /* Makes the highlight span the full height */
     transition: background-color 0.3s, color 0.3s;
+}
+
+nav li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 60px; /* Adjusted height to match the navigation bar */
 }
 
 nav a:hover {
     background-color: rgba(255, 255, 255, 0.2);
     color: #fff;
+    border-radius: 0; /* Keeps it a full vertical rectangle */
 }
 
 /* Responsive Styles */

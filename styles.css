@@ -8,10 +8,10 @@ body {
     text-align: center;
 }
 
-/* Header and Navigation Styles */
+/* Header & Navigation */
 header {
     background-color: #4a90e2;
-    padding: 10px 20px;
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -19,54 +19,53 @@ header {
     width: 100%;
     top: 0;
     z-index: 1000;
+    height: 70px; /* Define a fixed height */
 }
 
-.logo {
-    max-width: 120px;
-}
-
-.nav-toggle {
-    display: none;
-}
-
+/* Navigation bar */
 nav {
     display: flex;
     align-items: center;
+    height: 100%; /* Make nav match header height */
 }
 
+/* Navigation list */
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 60px; /* 1-inch spacing between links */
-    height: 100%; /* Ensures nav bar height is respected */
-    align-items: stretch; /* Stretches list items to full height */
+    gap: 60px; /* Space between links */
+    height: 100%; /* Match full height of nav */
+    align-items: stretch; /* Stretch items to full height */
 }
 
+/* Navigation items */
 nav li {
     display: flex;
     align-items: center;
-    height: 100%; /* Makes each menu item fill the nav bar height */
+    height: 100%; /* Make each item full height */
 }
 
+/* Navigation links */
 nav a {
     text-decoration: none;
     color: white;
     font-size: 18px;
     font-weight: bold;
-    padding: 15px 20px;
+    padding: 0 20px; /* Keep padding horizontal only */
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%; /* Makes the hover effect span full height */
+    height: 100%; /* Ensures full height hover effect */
     transition: background-color 0.3s, color 0.3s;
 }
 
+/* Hover Effect - Full Height Highlight */
 nav a:hover {
     background-color: rgba(255, 255, 255, 0.2);
     color: #fff;
-    border-radius: 0; /* Ensures the highlight is a full vertical rectangle */
+    border-radius: 0; /* Ensures full vertical rectangle */
 }
 
 /* Responsive Styles */

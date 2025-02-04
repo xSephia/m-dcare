@@ -8,10 +8,10 @@ body {
     text-align: center;
 }
 
-/* Header & Navigation */
+/* Header */
 header {
     background-color: #4a90e2;
-    padding: 0;
+    padding: 0 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -19,53 +19,49 @@ header {
     width: 100%;
     top: 0;
     z-index: 1000;
-    height: 70px; /* Define a fixed height */
+    height: 70px; /* Set a fixed height for the header */
 }
 
-/* Navigation bar */
+/* Navigation */
 nav {
     display: flex;
     align-items: center;
-    height: 100%; /* Make nav match header height */
+    height: 100%; /* Inherit the height from the header */
 }
 
-/* Navigation list */
+/* Navigation List */
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 60px; /* Space between links */
-    height: 100%; /* Match full height of nav */
-    align-items: stretch; /* Stretch items to full height */
+    gap: 60px; /* Approximately 1 inch spacing */
+    height: 100%; /* Inherit the height from the nav */
+    align-items: center; /* Center items vertically */
 }
 
-/* Navigation items */
+/* Navigation Items */
 nav li {
-    display: flex;
-    align-items: center;
-    height: 100%; /* Make each item full height */
+    height: 100%; /* Ensure list items span the full height */
 }
 
-/* Navigation links */
+/* Navigation Links */
 nav a {
     text-decoration: none;
     color: white;
     font-size: 18px;
     font-weight: bold;
-    padding: 0 20px; /* Keep padding horizontal only */
+    padding: 0 20px; /* Horizontal padding */
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: 100%; /* Ensures full height hover effect */
+    height: 100%; /* Ensure links span the full height */
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* Hover Effect - Full Height Highlight */
+/* Hover Effect */
 nav a:hover {
     background-color: rgba(255, 255, 255, 0.2);
     color: #fff;
-    border-radius: 0; /* Ensures full vertical rectangle */
 }
 
 /* Responsive Styles */

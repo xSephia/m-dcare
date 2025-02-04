@@ -22,29 +22,33 @@ header {
     height: 70px; /* Keep navbar height fixed */
 }
 
-/* Logo */
+/* Logo Fix: Raise to Touch Top of Navbar */
 .logo {
-    height: 70px; /* Adjust logo size */
+    height: 70px; /* Keeps logo size consistent */
     width: auto; /* Maintain aspect ratio */
-    position: relative; /* Allows overlapping effect */
-    top: 10px; /* Moves the logo 10px over the navbar border */
-    z-index: 10; /* Ensures the logo appears above other elements */
+    position: absolute; /* Allows precise positioning */
+    top: 0; /* Moves logo to touch the top of navbar */
+    left: 20px; /* Adjust spacing from the left */
+    z-index: 10; /* Keeps logo above other elements */
 }
 
-/* Navigation */
+/* Navbar Fix: Recenter Navigation Options */
 nav {
     display: flex;
     align-items: center;
-    height: 100%; /* Matches header height */
+    justify-content: center; /* Centers nav items properly */
+    flex-grow: 1;
+    height: 100%;
+    margin-left: auto; /* Prevents nav options from pushing too far right */
 }
 
 /* Navigation List */
 nav ul {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 0 auto; /* Keeps it centered */
     display: flex;
-    gap: 60px; /* Keeps navigation links well-spaced */
+    gap: 60px; /* Keeps spacing even */
     height: 100%;
     align-items: center;
 }
@@ -62,7 +66,7 @@ nav a {
     color: white;
     font-size: 18px;
     font-weight: bold;
-    padding: 0 20px; /* Keep horizontal padding */
+    padding: 0 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -74,9 +78,8 @@ nav a {
 nav a:hover {
     background-color: rgba(255, 255, 255, 0.2);
     color: #fff;
-    border-radius: 0; /* Keeps full-height hover effect */
+    border-radius: 0;
 }
-
 /* Responsive Styles */
 @media (max-width: 768px) {
     .nav-toggle {

@@ -24,8 +24,11 @@ header {
 
 /* Logo */
 .logo {
-    height: 50px; /* Keeps logo properly sized */
-    width: auto; /* Maintains aspect ratio */
+    height: 70px; /* Adjust logo size */
+    width: auto; /* Maintain aspect ratio */
+    position: relative; /* Allows overlapping effect */
+    top: 10px; /* Moves the logo 10px over the navbar border */
+    z-index: 10; /* Ensures the logo appears above other elements */
 }
 
 /* Navigation */
